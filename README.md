@@ -142,3 +142,4 @@ PROFILE_AUTOFILL/
 
 이 프로젝트는 MVP 성격이 강해서 구조가 비교적 단순합니다.  
 대신 `popup/` 과 `content/` 역할이 명확히 나뉘어 있어서, 기능 확장이나 리팩터링도 비교적 수월한 편입니다. 🙌✨
+# Account-Management
