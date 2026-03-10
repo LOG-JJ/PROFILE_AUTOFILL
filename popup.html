@@ -9,137 +9,224 @@
   <body>
     <main class="shell">
       <section class="surface">
-        <section class="summary-card">
-          <div class="summary-card__copy">
-            <p class="section-kicker">자동완성 준비 상태</p>
-            <div class="summary-card__metric-row">
-              <h1 id="profileMetric">0 / 10</h1>
-              <span id="profileBadge" class="metric-badge">0%</span>
-            </div>
-            <p id="profileHint" class="summary-card__hint">저장된 프로필 항목과 자동완성 상태를 여기서 확인할 수 있습니다.</p>
-          </div>
-
-          <p id="statusPill" class="status-pill" data-state="online">
-            <span class="status-pill__dot" aria-hidden="true"></span>
-            <span id="brandStatus">온라인 상태</span>
-          </p>
-        </section>
-
-        <form id="profile-form" class="profile-form">
-          <section class="panel">
-            <div class="panel__header">
-              <p class="section-kicker">기능 설정</p>
-              <h2>입력 동작</h2>
-            </div>
-
-            <div class="setting-list">
-              <div class="setting-row">
-                <div class="setting-row__copy">
-                  <strong>추천 오버레이</strong>
-                  <span>현재 칸에 맞는 값을 카드로 제안합니다.</span>
+        <div class="workspace">
+          <aside class="sidebar">
+            <section class="summary-card">
+              <div class="summary-card__copy">
+                <p class="section-kicker">자동완성 준비 상태</p>
+                <div class="summary-card__metric-row">
+                  <h1 id="profileMetric">1개</h1>
+                  <span id="profileBadge" class="metric-badge">0%</span>
                 </div>
-                <label class="switch">
-                  <input id="enableSuggestions" name="enableSuggestions" type="checkbox">
-                  <span class="switch__track"><span class="switch__thumb"></span></span>
+                <p id="profileHint" class="summary-card__hint">저장된 프로필과 자동완성 상태를 여기서 확인할 수 있습니다.</p>
+              </div>
+
+              <p id="statusPill" class="status-pill" data-state="idle">
+                <span class="status-pill__dot" aria-hidden="true"></span>
+                <span id="brandStatus">프로필 입력 대기</span>
+              </p>
+            </section>
+
+            <section class="panel">
+              <div class="panel__header">
+                <p class="section-kicker">기능 설정</p>
+                <h2>입력 동작</h2>
+              </div>
+
+              <div class="setting-list">
+                <div class="setting-row">
+                  <div class="setting-row__copy">
+                    <strong>추천 오버레이</strong>
+                    <span>현재 칸에 맞는 값을 카드로 제안합니다.</span>
+                  </div>
+                  <label class="switch">
+                    <input id="enableSuggestions" name="enableSuggestions" type="checkbox">
+                    <span class="switch__track"><span class="switch__thumb"></span></span>
+                  </label>
+                </div>
+
+                <div class="setting-row">
+                  <div class="setting-row__copy">
+                    <strong>동의 항목 자동 전체동의</strong>
+                    <span>전체동의가 있으면 우선 클릭합니다.</span>
+                  </div>
+                  <label class="switch">
+                    <input id="autoAgreeTerms" name="autoAgreeTerms" type="checkbox">
+                    <span class="switch__track"><span class="switch__thumb"></span></span>
+                  </label>
+                </div>
+              </div>
+            </section>
+          </aside>
+
+          <form id="profile-form" class="profile-form">
+            <section class="panel panel--editor">
+              <div class="panel__header panel__header--split">
+                <div>
+                  <p class="section-kicker">프로필 관리</p>
+                  <h2>여러 프로필 저장 및 편집</h2>
+                </div>
+
+                <div class="panel__actions">
+                  <button id="createProfileButton" type="button" class="ghost-button">새 프로필</button>
+                  <button id="deleteProfileButton" type="button" class="ghost-button ghost-button--danger">삭제</button>
+                </div>
+              </div>
+
+              <div class="editor-toolbar">
+                <div class="profile-controls">
+                  <div class="field field--profile-select">
+                    <span class="field__label">저장된 프로필</span>
+                    <input id="profileSelect" name="profileSelect" type="hidden">
+                    <div id="profilePicker" class="profile-picker" data-open="false">
+                      <button
+                        id="profilePickerTrigger"
+                        class="profile-picker__trigger"
+                        type="button"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-controls="profilePickerMenu"
+                      >
+                        <span class="profile-picker__trigger-copy">
+                          <strong id="profilePickerValue" class="profile-picker__value">저장된 프로필 없음</strong>
+                          <span id="profilePickerMeta" class="profile-picker__meta">프로필을 추가해 시작하세요</span>
+                        </span>
+                        <span class="profile-picker__chevron" aria-hidden="true"></span>
+                      </button>
+
+                      <div id="profilePickerMenu" class="profile-picker__menu" role="listbox" aria-label="저장된 프로필 목록"></div>
+                    </div>
+                  </div>
+
+                  <label class="field field--profile-name">
+                    <span class="field__label">프로필 이름</span>
+                    <input id="profileName" name="profileName" autocomplete="off" placeholder="예: 본인 인증용">
+                  </label>
+                </div>
+
+                <p class="editor-note">드롭다운에서 선택한 프로필이 현재 자동완성에 바로 사용됩니다.</p>
+              </div>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span class="field__label">이름</span>
+                  <input id="fullName" name="fullName" autocomplete="off" placeholder="홍길동">
+                </label>
+
+                <label class="field">
+                  <span class="field__label">이메일</span>
+                  <input id="email" name="email" type="email" autocomplete="off" placeholder="name@example.com">
+                </label>
+
+                <label class="field">
+                  <span class="field__label">휴대폰 번호</span>
+                  <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="11" placeholder="01012345678">
+                </label>
+
+                <div class="field field--custom-picker">
+                  <span class="field__label">통신사</span>
+                  <select id="carrier" name="carrier" class="picker-native" tabindex="-1" aria-hidden="true">
+                    <option value="">선택</option>
+                    <option value="SKT">SKT</option>
+                    <option value="KT">KT</option>
+                    <option value="LGU+">LGU+</option>
+                    <option value="SKT 알뜰폰">SKT 알뜰폰</option>
+                    <option value="KT 알뜰폰">KT 알뜰폰</option>
+                    <option value="LGU+ 알뜰폰">LG U+ 알뜰폰</option>
+                  </select>
+                  <div id="carrierPicker" class="profile-picker profile-picker--compact" data-open="false" data-placement="auto">
+                    <button
+                      id="carrierPickerTrigger"
+                      class="profile-picker__trigger profile-picker__trigger--compact"
+                      type="button"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="carrierPickerMenu"
+                    >
+                      <span class="profile-picker__trigger-copy">
+                        <strong id="carrierPickerValue" class="profile-picker__value">선택</strong>
+                        <span id="carrierPickerMeta" class="profile-picker__meta">통신사를 선택하세요</span>
+                      </span>
+                      <span class="profile-picker__chevron" aria-hidden="true"></span>
+                    </button>
+                    <div id="carrierPickerMenu" class="profile-picker__menu" role="listbox" aria-label="통신사 목록"></div>
+                  </div>
+                </div>
+
+                <label class="field">
+                  <span class="field__label">회사명</span>
+                  <input id="company" name="company" autocomplete="off" placeholder="Antigravity">
+                </label>
+
+                <div class="field field--custom-picker">
+                  <span class="field__label">성별</span>
+                  <select id="gender" name="gender" class="picker-native" tabindex="-1" aria-hidden="true">
+                    <option value="">선택</option>
+                    <option value="남성">남성</option>
+                    <option value="여성">여성</option>
+                  </select>
+                  <div id="genderPicker" class="profile-picker profile-picker--compact" data-open="false" data-placement="auto">
+                    <button
+                      id="genderPickerTrigger"
+                      class="profile-picker__trigger profile-picker__trigger--compact"
+                      type="button"
+                      aria-haspopup="listbox"
+                      aria-expanded="false"
+                      aria-controls="genderPickerMenu"
+                    >
+                      <span class="profile-picker__trigger-copy">
+                        <strong id="genderPickerValue" class="profile-picker__value">선택</strong>
+                        <span id="genderPickerMeta" class="profile-picker__meta">성별을 선택하세요</span>
+                      </span>
+                      <span class="profile-picker__chevron" aria-hidden="true"></span>
+                    </button>
+                    <div id="genderPickerMenu" class="profile-picker__menu" role="listbox" aria-label="성별 목록"></div>
+                  </div>
+                </div>
+
+                <label class="field field--span-2">
+                  <span class="field__label">생년월일</span>
+                  <div class="birthdate-row">
+                    <input id="birthYear" name="birthYear" inputmode="numeric" autocomplete="bday-year" maxlength="4" placeholder="1990" aria-label="생년월일 연도">
+                    <span>년</span>
+                    <input id="birthMonth" name="birthMonth" inputmode="numeric" autocomplete="bday-month" maxlength="2" placeholder="01" aria-label="생년월일 월">
+                    <span>월</span>
+                    <input id="birthDay" name="birthDay" inputmode="numeric" autocomplete="bday-day" maxlength="2" placeholder="01" aria-label="생년월일 일">
+                    <span>일</span>
+                  </div>
+                </label>
+
+                <label class="field">
+                  <span class="field__label">우편번호</span>
+                  <input id="postalCode" name="postalCode" autocomplete="off" placeholder="06236">
+                </label>
+
+                <label class="field field--span-2">
+                  <span class="field__label">주소</span>
+                  <input id="addressLine1" name="addressLine1" autocomplete="off" placeholder="서울시 강남구 테헤란로 123">
+                </label>
+
+                <label class="field">
+                  <span class="field__label">상세 주소</span>
+                  <input id="addressLine2" name="addressLine2" autocomplete="off" placeholder="4층 401호">
                 </label>
               </div>
 
-              <div class="setting-row">
-                <div class="setting-row__copy">
-                  <strong>동의 항목 자동 전체동의</strong>
-                  <span>전체동의가 있으면 우선 클릭합니다.</span>
-                </div>
-                <label class="switch">
-                  <input id="autoAgreeTerms" name="autoAgreeTerms" type="checkbox">
-                  <span class="switch__track"><span class="switch__thumb"></span></span>
-                </label>
+              <div class="form-footer">
+                <p id="status" class="status" aria-live="polite">현재 입력값을 저장하면 현재 열린 탭에 바로 반영됩니다.</p>
+                <button type="submit" class="save-button">현재 프로필 저장</button>
               </div>
-            </div>
-          </section>
-
-          <section class="panel">
-            <div class="panel__header">
-              <p class="section-kicker">프로필 입력</p>
-              <h2>자동완성 데이터</h2>
-            </div>
-
-            <div class="field-grid">
-              <label class="field">
-                <span class="field__label">이름</span>
-                <input id="fullName" name="fullName" autocomplete="off" placeholder="홍길동">
-              </label>
-
-              <label class="field">
-                <span class="field__label">이메일</span>
-                <input id="email" name="email" type="email" autocomplete="off" placeholder="name@example.com">
-              </label>
-
-              <label class="field">
-                <span class="field__label">휴대폰 번호</span>
-                <input id="phone" name="phone" autocomplete="off" placeholder="01012345678">
-              </label>
-
-              <label class="field">
-                <span class="field__label">통신사</span>
-                <select id="carrier" name="carrier">
-                  <option value="">선택</option>
-                  <option value="SKT">SKT</option>
-                  <option value="KT">KT</option>
-                  <option value="LGU+">LGU+</option>
-                </select>
-              </label>
-
-              <label class="field">
-                <span class="field__label">회사명</span>
-                <input id="company" name="company" autocomplete="off" placeholder="Antigravity">
-              </label>
-
-              <label class="field">
-                <span class="field__label">성별</span>
-                <select id="gender" name="gender">
-                  <option value="">선택</option>
-                  <option value="남성">남성</option>
-                  <option value="여성">여성</option>
-                </select>
-              </label>
-
-              <label class="field field--full">
-                <span class="field__label">생년월일</span>
-                <div class="birthdate-row">
-                  <input id="birthYear" name="birthYear" inputmode="numeric" autocomplete="bday-year" maxlength="4" placeholder="1990" aria-label="생년월일 연도">
-                  <span>년</span>
-                  <input id="birthMonth" name="birthMonth" inputmode="numeric" autocomplete="bday-month" maxlength="2" placeholder="01" aria-label="생년월일 월">
-                  <span>월</span>
-                  <input id="birthDay" name="birthDay" inputmode="numeric" autocomplete="bday-day" maxlength="2" placeholder="01" aria-label="생년월일 일">
-                  <span>일</span>
-                </div>
-              </label>
-
-              <label class="field">
-                <span class="field__label">우편번호</span>
-                <input id="postalCode" name="postalCode" autocomplete="off" placeholder="06236">
-              </label>
-
-              <label class="field field--span-2">
-                <span class="field__label">주소</span>
-                <input id="addressLine1" name="addressLine1" autocomplete="off" placeholder="서울시 강남구 테헤란로 123">
-              </label>
-
-              <label class="field field--span-2">
-                <span class="field__label">상세 주소</span>
-                <input id="addressLine2" name="addressLine2" autocomplete="off" placeholder="4층 401호">
-              </label>
-            </div>
-          </section>
-
-          <div class="form-footer">
-            <p id="status" class="status" aria-live="polite">저장하면 현재 열린 탭에 바로 반영됩니다.</p>
-            <button type="submit" class="save-button">저장</button>
-          </div>
-        </form>
+            </section>
+          </form>
+        </div>
       </section>
     </main>
 
-    <script src="popup.js"></script>
+    <script src="popup/popup-constants.js"></script>
+    <script src="popup/popup-domain.js"></script>
+    <script src="popup/popup-repository.js"></script>
+    <script src="popup/popup-view.js"></script>
+    <script src="popup/popup-controller.js"></script>
+    <script src="popup/popup-main.js"></script>
   </body>
 </html>

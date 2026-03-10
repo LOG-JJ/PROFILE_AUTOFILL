@@ -39,7 +39,14 @@
         "<all_urls>"
       ],
       "js": [
-        "content.js"
+        "content/content-constants.js",
+        "content/content-settings.js",
+        "content/content-inference.js",
+        "content/content-normalizers.js",
+        "content/content-consent.js",
+        "content/content-overlay.js",
+        "content/content-controller.js",
+        "content/content-main.js"
       ],
       "css": [
         "content.css"
