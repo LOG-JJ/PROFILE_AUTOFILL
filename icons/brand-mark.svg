@@ -1,49 +1,14 @@
-<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="128" height="128" rx="28" fill="#F1F1F4"/>
-  <g filter="url(#outerGlow)">
-    <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#shell)"/>
-  </g>
-  <g filter="url(#panelShadow)">
-    <rect x="30" y="44" width="68" height="46" rx="16" fill="url(#panel)"/>
-  </g>
-  <rect x="52" y="64" width="12" height="6" rx="3" fill="#2E3445"/>
-  <rect x="69" y="64" width="21" height="6" rx="3" fill="#C7C4F1"/>
-  <g filter="url(#sparkleShadow)">
-    <path d="M101 28.5C101.9 34.7 103.4 36.2 109.6 37.1C103.4 38 101.9 39.5 101 45.7C100.1 39.5 98.6 38 92.4 37.1C98.6 36.2 100.1 34.7 101 28.5Z" stroke="#A855F7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M113.5 30.5C113.9 33.3 114.6 34 117.4 34.4C114.6 34.8 113.9 35.5 113.5 38.3C113.1 35.5 112.4 34.8 109.6 34.4C112.4 34 113.1 33.3 113.5 30.5Z" fill="#A855F7"/>
-  </g>
-  <defs>
-    <filter id="outerGlow" x="0" y="0" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-      <feGaussianBlur stdDeviation="4" result="effect1_foregroundBlur"/>
-    </filter>
-    <filter id="panelShadow" x="22" y="37" width="84" height="62" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dy="1"/>
-      <feGaussianBlur stdDeviation="4"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.588235 0 0 0 0 0.607843 0 0 0 0 0.862745 0 0 0 0.22 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-    </filter>
-    <filter id="sparkleShadow" x="86.9" y="23" width="35" height="28.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dy="2"/>
-      <feGaussianBlur stdDeviation="2"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0.694118 0 0 0 0 0.392157 0 0 0 0 0.92549 0 0 0 0.22 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-    </filter>
-    <radialGradient id="shell" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(44 32) rotate(49.112) scale(93.9824)">
-      <stop stop-color="#D8CBF4"/>
-      <stop offset="0.45" stop-color="#F3F1F7"/>
-      <stop offset="1" stop-color="#E9EEF9"/>
-    </radialGradient>
-    <linearGradient id="panel" x1="40" y1="48" x2="94" y2="90" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FCFCFE"/>
-      <stop offset="1" stop-color="#F2F0FA"/>
-    </linearGradient>
-  </defs>
+<svg id="svg-dark" width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Browser Window Base -->
+  <rect x="16" y="24" width="96" height="80" rx="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="8"></rect>
+  <!-- Top Bar (Solid) -->
+  <path d="M 20 48 L 20 36 Q 20 28 28 28 L 100 28 Q 108 28 108 36 L 108 48 Z" fill="#0F172A"></path>
+  <!-- Browser Dots -->
+  <circle cx="34" cy="38" r="4" fill="#FFFFFF"></circle>
+  <circle cx="50" cy="38" r="4" fill="#FFFFFF"></circle>
+  <!-- Auto-filled inputs -->
+  <rect x="32" y="60" width="64" height="12" rx="4" fill="#3B82F6"></rect>
+  <rect x="32" y="80" width="40" height="12" rx="4" fill="#10B981"></rect>
+  <!-- Smart Sparkle -->
+  <path d="M 100 80 Q 100 96 116 96 Q 100 96 100 112 Q 100 96 84 96 Q 100 96 100 80 Z" fill="#8B5CF6" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"></path>
 </svg>

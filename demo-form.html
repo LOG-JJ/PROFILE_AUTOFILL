@@ -23,6 +23,11 @@
         font-size: 34px;
       }
 
+      h2 {
+        margin: 32px 0 0;
+        font-size: 22px;
+      }
+
       p {
         color: #57534e;
         line-height: 1.5;
@@ -64,6 +69,17 @@
         background: white;
       }
 
+      button {
+        justify-self: start;
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 18px;
+        background: #1f2937;
+        color: white;
+        font: inherit;
+        font-weight: 700;
+      }
+
       textarea {
         min-height: 120px;
       }
@@ -74,6 +90,22 @@
       <h1>자동완성 데모 폼</h1>
       <p>확장프로그램을 로드한 뒤 아래 입력칸이나 선택칸을 클릭하면 저장된 프로필 값을 추천받을 수 있습니다.</p>
 
+      <h2>로그인 폼 - 추천 제외 대상</h2>
+      <form action="/login" class="login-panel">
+        <div class="row">
+          <label for="loginEmail">로그인 이메일</label>
+          <input id="loginEmail" name="login_email" type="email" autocomplete="username" placeholder="email@example.com">
+        </div>
+
+        <div class="row">
+          <label for="loginPassword">비밀번호</label>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password">
+        </div>
+
+        <button type="submit">로그인</button>
+      </form>
+
+      <h2>일반 프로필 폼 - 추천 대상</h2>
       <form>
         <div class="row">
           <label for="receiverName">받는 사람 이름</label>
@@ -82,7 +114,7 @@
 
         <div class="row">
           <label for="contactEmail">이메일 주소</label>
-          <input id="contactEmail" name="contact_email" type="email" placeholder="name@example.com">
+          <input id="contactEmail" name="contact_email" type="email" autocomplete="section-shipping shipping email" placeholder="name@example.com">
         </div>
 
         <div class="double">
@@ -149,6 +181,11 @@
         <div class="row">
           <label for="addressDetail">상세주소</label>
           <input id="addressDetail" name="address_detail" autocomplete="address-line2" placeholder="101동 902호">
+        </div>
+
+        <div class="row">
+          <span id="invoiceEmailLabel"><strong>세금계산서 이메일</strong></span>
+          <input id="invoiceEmail" name="invoiceEmail" type="email" aria-labelledby="invoiceEmailLabel" placeholder="billing@example.com">
         </div>
 
         <div class="row">

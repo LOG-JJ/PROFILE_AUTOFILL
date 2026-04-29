@@ -97,14 +97,6 @@
     }
 
     if (typeof value === "object") {
-      if (typeof value.value === "string" || typeof value.value === "number") {
-        return `${value.value}`;
-      }
-
-      if (typeof value.textContent === "string") {
-        return value.textContent;
-      }
-
       return "";
     }
 

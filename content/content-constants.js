@@ -38,7 +38,31 @@
     company: ["company", "organization", "office", "employer", "직장", "회사", "기관", "상호"],
     postalCode: ["postal", "postcode", "post code", "zip", "zipcode", "우편번호"],
     addressLine1: ["address", "addr", "street", "shipping", "delivery", "road", "주소", "배송지", "도로명"],
-    addressLine2: ["address2", "address line 2", "detail", "suite", "apt", "unit", "상세주소", "나머지주소", "동호수"],
+    addressLine2: [
+      "address2",
+      "address line 2",
+      "address detail",
+      "detail address",
+      "addr2",
+      "addr detail",
+      "detail",
+      "suite",
+      "apt",
+      "unit",
+      "room",
+      "floor",
+      "상세주소",
+      "주소상세",
+      "상세 주소",
+      "나머지주소",
+      "나머지 주소",
+      "동호수",
+      "동 호수",
+      "동/호수",
+      "호수",
+      "호실",
+      "층호"
+    ],
     carrier: [
       "carrier",
       "telecom",
@@ -94,6 +118,23 @@
     sex: "gender",
     gender: "gender"
   };
+
+  ContentApp.CREDENTIAL_AUTOCOMPLETE_FIELD_NAMES = new Set([
+    "username",
+    "current-password",
+    "new-password",
+    "one-time-code",
+    "webauthn"
+  ]);
+
+  ContentApp.ADDRESS_SEARCH_PROVIDER_HOSTS = [
+    "postcode.map.kakao.com",
+    "postcode.map.daum.net",
+    "spi.maps.daum.net",
+    "business.juso.go.kr",
+    "www.juso.go.kr",
+    "juso.go.kr"
+  ];
 
   ContentApp.SELECT_VALUE_ALIASES = {
     carrier: {

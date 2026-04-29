@@ -1,68 +1,29 @@
 (function initContentOverlay(globalScope) {
   const ContentApp = globalScope.ProfileAutofillContent || (globalScope.ProfileAutofillContent = {});
-  const { LABELS, state } = ContentApp;
+  const { state } = ContentApp;
 
   function renderOverlay(suggestion, element) {
     ensureOverlay();
     state.overlay.innerHTML = "";
     setTargetHighlight(element);
 
-    const eyebrow = document.createElement("p");
-    eyebrow.className = "paa-card__eyebrow";
-    eyebrow.textContent = "추천 입력";
-
-    const title = document.createElement("p");
-    title.className = "paa-card__title";
-    title.textContent = LABELS[suggestion.fieldType];
-
-    const meta = document.createElement("p");
-    meta.className = "paa-card__meta";
-    meta.textContent = suggestion.relatedFields.length > 1
-      ? `같은 폼 ${suggestion.relatedFields.length}개 필드도 함께 준비되었습니다.`
-      : "현재 칸에 가장 적합한 값을 바로 채울 수 있습니다.";
-
-    const previewShell = document.createElement("div");
-    previewShell.className = "paa-card__preview-shell";
-
-    const previewLabel = document.createElement("p");
-    previewLabel.className = "paa-card__preview-label";
-    previewLabel.textContent = "추천 값";
-
     const preview = document.createElement("div");
     preview.className = "paa-card__preview";
     preview.textContent = suggestion.value;
 
-    previewShell.append(previewLabel, preview);
-
     const actions = document.createElement("div");
     actions.className = "paa-card__actions";
-    actions.dataset.layout = suggestion.relatedFields.length > 1 ? "triple" : "double";
 
     const fillButton = document.createElement("button");
     fillButton.type = "button";
     fillButton.className = "paa-card__button paa-card__button--primary";
-    fillButton.textContent = "현재 칸 채우기";
+    fillButton.textContent = "Fill";
     fillButton.addEventListener("click", fillSuggestedValue);
     actions.appendChild(fillButton);
 
-    if (suggestion.relatedFields.length > 1) {
-      const fillAllButton = document.createElement("button");
-      fillAllButton.type = "button";
-      fillAllButton.className = "paa-card__button paa-card__button--secondary";
-      fillAllButton.textContent = "전체 채우기";
-      fillAllButton.addEventListener("click", fillRelatedFields);
-      actions.appendChild(fillAllButton);
-    }
-
-    const dismissButton = document.createElement("button");
-    dismissButton.type = "button";
-    dismissButton.className = "paa-card__button paa-card__button--ghost";
-    dismissButton.textContent = "닫기";
-    dismissButton.addEventListener("click", hideOverlay);
-    actions.appendChild(dismissButton);
-
-    state.overlay.append(eyebrow, title, meta, previewShell, actions);
+    state.overlay.append(preview, actions);
     state.overlay.hidden = false;
+    state.overlay.style.display = "";
     syncOverlayTargetPosition(element, true);
     startOverlayTracking();
   }
@@ -104,7 +65,7 @@
     }
 
     const rect = target.getBoundingClientRect();
-    const overlayWidth = state.overlay.offsetWidth || 320;
+    const overlayWidth = state.overlay.offsetWidth || 220;
     const overlayHeight = state.overlay.offsetHeight || 0;
     const preferredTop = rect.bottom + 8;
     const maxTop = window.innerHeight - overlayHeight - 12;
@@ -242,6 +203,7 @@
     clearTargetHighlight();
     if (state.overlay) {
       state.overlay.hidden = true;
+      state.overlay.style.display = "none";
     }
   }
 

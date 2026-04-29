@@ -37,9 +37,9 @@
 
 html,
 body {
-  width: 780px;
-  min-height: 520px;
-  border-radius: 28px;
+  width: 704px;
+  min-height: 0;
+  border-radius: 24px;
   overflow: hidden;
   background: transparent;
   text-rendering: optimizeLegibility;
@@ -61,7 +61,7 @@ select {
 }
 
 .shell {
-  padding: 6px;
+  padding: 4px;
   background: transparent;
 }
 
@@ -69,7 +69,7 @@ select {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 24px;
   background:
     radial-gradient(circle at top left, rgba(118, 147, 255, 0.26), transparent 34%),
     radial-gradient(circle at 88% 14%, rgba(255, 255, 255, 0.42), transparent 24%),
@@ -78,7 +78,7 @@ select {
   border: 1px solid rgba(255, 255, 255, 0.48);
   box-shadow: var(--shadow-xl);
   backdrop-filter: blur(22px) saturate(145%);
-  padding: 12px;
+  padding: 10px;
 }
 
 .surface::before {
@@ -108,8 +108,8 @@ select {
 
 .workspace {
   display: grid;
-  grid-template-columns: 228px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 208px minmax(0, 1fr);
+  gap: 10px;
   align-items: stretch;
 }
 
@@ -121,7 +121,7 @@ select {
 
 .sidebar {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   align-content: start;
   position: relative;
   z-index: 1;
@@ -136,7 +136,7 @@ select {
 .panel {
   position: relative;
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: 20px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(248, 250, 255, 0.38)),
     radial-gradient(circle at top right, rgba(169, 196, 255, 0.16), transparent 28%);
@@ -158,14 +158,14 @@ select {
 
 .summary-card {
   display: grid;
-  gap: 10px;
-  padding: 14px;
+  gap: 8px;
+  padding: 12px;
 }
 
 .section-kicker {
   margin: 0 0 5px;
   color: #98a1b1;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
@@ -178,7 +178,7 @@ select {
 
 .summary-card h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1;
   letter-spacing: -0.05em;
 }
@@ -187,20 +187,20 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 42px;
-  padding: 4px 8px;
+  min-width: 38px;
+  padding: 4px 7px;
   border-radius: 999px;
   background: rgba(65, 200, 120, 0.14);
   color: var(--success);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
 }
 
 .summary-card__hint {
   margin: 0;
   color: var(--muted-strong);
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 10px;
+  line-height: 1.4;
   white-space: pre-line;
 }
 
@@ -209,20 +209,20 @@ select {
   align-items: center;
   gap: 6px;
   width: fit-content;
-  padding: 7px 10px;
+  padding: 6px 9px;
   border-radius: 999px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(241, 245, 252, 0.48));
   border: 1px solid rgba(255, 255, 255, 0.72);
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   white-space: nowrap;
   box-shadow: var(--glass-inset), var(--shadow-md);
 }
 
 .status-pill__dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   background: #5fd08b;
   box-shadow: 0 0 0 4px rgba(95, 208, 139, 0.14);
@@ -234,16 +234,16 @@ select {
 }
 
 .panel {
-  padding: 14px;
+  padding: 12px;
 }
 
 .panel__header {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .panel__header h2 {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
@@ -268,7 +268,7 @@ select {
 
 .panel--editor {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   height: 100%;
   overflow: visible;
   isolation: isolate;
@@ -277,20 +277,20 @@ select {
 
 .setting-list {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .setting-row {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
 .setting-row__copy strong {
   display: block;
-  margin-bottom: 3px;
-  font-size: 12px;
+  margin-bottom: 2px;
+  font-size: 11px;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
@@ -298,7 +298,7 @@ select {
 .setting-row__copy span {
   display: block;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1.35;
 }
 
@@ -317,8 +317,8 @@ select {
 
 .switch__track {
   position: relative;
-  width: 42px;
-  height: 24px;
+  width: 40px;
+  height: 22px;
   border-radius: 999px;
   background: #d0d5dd;
   box-shadow: inset 0 0 0 1px rgba(108, 117, 130, 0.06);
@@ -329,8 +329,8 @@ select {
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0 4px 8px rgba(15, 23, 42, 0.16);
@@ -354,14 +354,14 @@ select {
 }
 
 .ghost-button {
-  padding: 9px 12px;
+  padding: 8px 10px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(239, 244, 252, 0.5)),
     radial-gradient(circle at top left, rgba(188, 210, 255, 0.16), transparent 60%);
   color: var(--text);
   border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow: var(--glass-inset), var(--shadow-md);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
 }
 
@@ -387,15 +387,15 @@ select {
 
 .editor-toolbar {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   position: relative;
   z-index: 24;
 }
 
 .profile-controls {
   display: grid;
-  grid-template-columns: minmax(0, 220px) minmax(0, 220px);
-  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 170px);
+  gap: 8px;
   align-items: end;
 }
 
@@ -428,14 +428,14 @@ select {
 .editor-note {
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 10px;
+  line-height: 1.35;
 }
 
 .field-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
   position: relative;
   z-index: 12;
   isolation: isolate;
@@ -443,7 +443,7 @@ select {
 
 .field {
   display: grid;
-  gap: 6px;
+  gap: 5px;
   min-width: 0;
   position: relative;
   z-index: 1;
@@ -464,7 +464,7 @@ select {
 
 .field__label {
   color: var(--muted-strong);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -475,14 +475,14 @@ select {
 .birthdate-row input {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 14px;
-  padding: 9px 10px;
+  border-radius: 12px;
+  padding: 8px 9px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(241, 245, 252, 0.48)),
     radial-gradient(circle at top left, rgba(194, 214, 255, 0.14), transparent 60%);
   color: var(--text);
   box-shadow: var(--glass-inset);
-  font-size: 12px;
+  font-size: 11px;
   backdrop-filter: blur(16px) saturate(130%);
   transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
@@ -501,7 +501,7 @@ select {
 .field select {
   appearance: none;
   cursor: pointer;
-  padding-right: 30px;
+  padding-right: 28px;
   background-image:
     linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(241, 245, 252, 0.48)),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1.25 1.5L6 6.25L10.75 1.5' stroke='%238792a5' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -529,12 +529,12 @@ select {
 }
 
 .profile-picker__trigger--compact {
-  min-height: 44px;
-  padding: 10px 14px;
+  min-height: 40px;
+  padding: 8px 12px;
 }
 
 .profile-picker--compact .profile-picker__menu {
-  max-height: 176px;
+  max-height: 164px;
   padding: 8px;
   gap: 6px;
   background:
@@ -547,8 +547,8 @@ select {
 }
 
 .profile-picker--compact .profile-picker__option {
-  min-height: 40px;
-  padding: 9px 11px;
+  min-height: 36px;
+  padding: 8px 10px;
   border-radius: 14px;
 }
 
@@ -565,10 +565,10 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
   width: 100%;
-  min-height: 42px;
-  padding: 9px 12px;
+  min-height: 40px;
+  padding: 8px 11px;
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 14px;
   background:
@@ -622,14 +622,14 @@ select {
 }
 
 .profile-picker__value {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .profile-picker__meta {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1.2;
 }
 
@@ -662,14 +662,14 @@ select {
 
 .profile-picker__menu {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
   z-index: 320;
   display: grid;
-  gap: 8px;
-  padding: 10px;
-  border-radius: 18px;
+  gap: 7px;
+  padding: 8px;
+  border-radius: 16px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(241, 245, 252, 0.62)),
     radial-gradient(circle at top left, rgba(194, 214, 255, 0.16), transparent 58%);
@@ -682,13 +682,13 @@ select {
   pointer-events: none;
   transform: translateY(-6px) scale(0.985);
   transition: opacity 180ms ease, transform 180ms ease;
-  max-height: 248px;
+  max-height: 208px;
   overflow-y: auto;
 }
 
 .profile-picker[data-placement="top"] .profile-picker__menu {
   top: auto;
-  bottom: calc(100% + 10px);
+  bottom: calc(100% + 8px);
   transform: translateY(6px) scale(0.985);
 }
 
@@ -721,9 +721,9 @@ select {
   display: grid;
   gap: 4px;
   width: 100%;
-  padding: 11px 12px;
+  padding: 9px 10px;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 15px;
+  border-radius: 14px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(243, 247, 253, 0.56)),
     radial-gradient(circle at top left, rgba(192, 210, 255, 0.12), transparent 60%);
@@ -755,24 +755,24 @@ select {
 }
 
 .profile-picker__option-title {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .profile-picker__option-meta {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1.25;
 }
 
 .profile-picker__empty {
-  padding: 12px;
-  border-radius: 14px;
+  padding: 10px;
+  border-radius: 12px;
   border: 1px dashed rgba(124, 144, 182, 0.32);
   background: rgba(255, 255, 255, 0.42);
   color: var(--muted);
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1.4;
 }
 
@@ -805,12 +805,12 @@ select {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) auto minmax(0, 0.8fr) auto minmax(0, 0.8fr) auto;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .birthdate-row span {
   color: #98a1b3;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
 }
 
@@ -818,7 +818,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   position: relative;
   z-index: 2;
 }
@@ -828,8 +828,8 @@ select {
   min-height: 16px;
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 10px;
+  line-height: 1.35;
 }
 
 .status[data-state="success"] {
@@ -842,7 +842,7 @@ select {
 
 .save-button {
   flex: 0 0 auto;
-  padding: 11px 16px;
+  padding: 10px 14px;
   background:
     linear-gradient(135deg, rgba(20, 31, 68, 0.96) 0%, rgba(8, 18, 42, 0.94) 100%),
     radial-gradient(circle at top left, rgba(116, 152, 255, 0.26), transparent 52%);
@@ -850,7 +850,7 @@ select {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.16),
     0 16px 28px rgba(7, 15, 35, 0.24);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: -0.03em;
 }
